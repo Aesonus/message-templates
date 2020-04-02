@@ -28,20 +28,21 @@ namespace Aesonus\Messages;
 use Aesonus\Messages\Contracts\MessageInterface;
 
 /**
- * Provides a message implementation that uses vsprintf to render a message
+ * Description of AbstractMessage
  *
  * @author Cory Laughlin <corylcomposinger at gmail.com>
  */
-abstract class AbstractSprintMessage extends AbstractMessage
+abstract class AbstractMessage implements MessageInterface
 {
-    public function render(): string
-    {
-        return vsprintf($this->getTemplate(), $this->data);
-    }
-
     /**
-     * Returns the template string
-     * @return string
+     *
+     * @var array
      */
-    abstract protected function getTemplate(): string;
+    protected $data = [];
+
+    public function setData(array $data): MessageInterface
+    {
+        $this->data = $data;
+        return $this;
+    }
 }

@@ -38,10 +38,4 @@ abstract class AbstractSprintMessage extends AbstractMessage
     {
         return vsprintf($this->getTemplate(), $this->data);
     }
-
-    /**
-     * Returns the template string
-     * @return string
-     */
-    abstract protected function getTemplate(): string;
 }

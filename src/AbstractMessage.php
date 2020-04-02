@@ -45,4 +45,10 @@ abstract class AbstractMessage implements MessageInterface
         $this->data = $data;
         return $this;
     }
+    
+    /**
+     * Returns the template string
+     * @return string
+     */
+    abstract protected function getTemplate(): string;
 }

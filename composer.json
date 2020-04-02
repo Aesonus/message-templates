@@ -1,0 +1,22 @@
+{
+    "name": "aesonus/message-templates",
+    "description": "A small library designed to render partials for use as messages",
+    "type": "library",
+    "require-dev": {
+        "aesonus/test-lib": "^3.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aesonus",
+            "email": "corylcomposinger@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Aesonus\\Messages\\": "src/",
+            "Aesonus\\Tests\\": "tests/"
+        }
+    }
+}

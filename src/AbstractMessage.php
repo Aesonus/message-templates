@@ -1,54 +1,32 @@
 <?php
 /*
- * The MIT License
- *
- * Copyright 2020 Cory Laughlin <corylcomposinger at gmail.com>.
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * The software is Copyright (C)2019 by Digital Architects
+ * The software includes all the files in the directory this file is located
+ * This software makes use of open source software. Such software is governed
+ * by their respective licenses
+ * All Rights Reserved
  */
-
 namespace Aesonus\Messages;
 
 use Aesonus\Messages\Contracts\MessageInterface;
+use Aesonus\Messages\Contracts\TemplateSourceInterface;
 
 /**
  * Description of AbstractMessage
  *
- * @author Cory Laughlin <corylcomposinger at gmail.com>
+ * @author Narya
  */
 abstract class AbstractMessage implements MessageInterface
 {
     /**
      *
-     * @var array
+     * @var TemplateSourceInterface
      */
-    protected $data = [];
-
-    public function setData(array $data): MessageInterface
+    protected $source;
+    
+    public function setSource(TemplateSourceInterface $source): MessageInterface
     {
-        $this->data = $data;
+        $this->source = $source;
         return $this;
     }
-    
-    /**
-     * Returns the template string
-     * @return string
-     */
-    abstract protected function getTemplate(): string;
 }

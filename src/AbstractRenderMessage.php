@@ -16,7 +16,7 @@ use Aesonus\Messages\Contracts\TemplateSourceInterface;
  *
  * @author Narya
  */
-abstract class AbstractMessage implements RenderMessageInterface
+abstract class AbstractRenderMessage implements RenderMessageInterface
 {
     /**
      *

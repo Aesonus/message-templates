@@ -13,7 +13,7 @@ namespace Aesonus\Messages;
  *
  * @author Narya
  */
-class RenderVsprintfMessage extends AbstractMessage
+class RenderVsprintfMessage extends AbstractRenderMessage
 {
     /**
      * {@inheritdoc}

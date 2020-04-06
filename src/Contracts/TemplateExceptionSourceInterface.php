@@ -12,7 +12,7 @@ namespace Aesonus\Messages\Contracts;
  *
  * @author Narya
  */
-interface TemplateExceptionSource extends TemplateSourceInterface
+interface TemplateExceptionSourceInterface extends TemplateSourceInterface
 {
     /**
      * Sets the exception that should help determine the template source

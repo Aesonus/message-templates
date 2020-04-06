@@ -11,10 +11,11 @@
 
 namespace Aesonus\Tests;
 
-use Aesonus\Messages\Contracts\TemplateExceptionSource;
+use Aesonus\Messages\Contracts\TemplateExceptionSourceInterface;
 use Aesonus\Messages\Contracts\TemplateSourceInterface;
 use Aesonus\Messages\RenderVsprintfMessage;
 use Aesonus\TestLib\BaseTestCase;
+use Exception;
 use PHPUnit\Framework\MockObject\MockObject;
 use Throwable;
 
@@ -68,19 +69,19 @@ class RenderVsprintfMessageTest extends BaseTestCase
      */
     public function renderReturnsRenderedTemplateUsingException($data, $expected)
     {
-        $source = new class() implements TemplateExceptionSource {
+        $source = new class() implements TemplateExceptionSourceInterface {
             public function getTemplate(): string
             {
                 return $this->exception->getMessage(); //Could be more complex than this
             }
 
-            public function setException(Throwable $exception): TemplateExceptionSource
+            public function setException(Throwable $exception): TemplateExceptionSourceInterface
             {
                 $this->exception = $exception;
                 return $this;
             }
         };
-        $source->setException(new \Exception('Hello %s!'));
+        $source->setException(new Exception('Hello %s!'));
         $this->testObj->setSource($source);
         $actual = $this->testObj->render($data);
         $this->assertEquals($expected, $actual);

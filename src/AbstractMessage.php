@@ -8,7 +8,7 @@
  */
 namespace Aesonus\Messages;
 
-use Aesonus\Messages\Contracts\MessageInterface;
+use Aesonus\Messages\Contracts\RenderMessageInterface;
 use Aesonus\Messages\Contracts\TemplateSourceInterface;
 
 /**
@@ -16,7 +16,7 @@ use Aesonus\Messages\Contracts\TemplateSourceInterface;
  *
  * @author Narya
  */
-abstract class AbstractMessage implements MessageInterface
+abstract class AbstractMessage implements RenderMessageInterface
 {
     /**
      *
@@ -24,7 +24,7 @@ abstract class AbstractMessage implements MessageInterface
      */
     protected $source;
     
-    public function setSource(TemplateSourceInterface $source): MessageInterface
+    public function setSource(TemplateSourceInterface $source): RenderMessageInterface
     {
         $this->source = $source;
         return $this;

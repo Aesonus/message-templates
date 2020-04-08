@@ -20,7 +20,7 @@ In this example, we will use a global constant to source the templates from
 const TEMPLATES = [
    'key1' => 'template string, %s',
    'key2' => 'template string two, %s',
-]
+];
 ``` 
 
 ##### Implement the message source interfaces
@@ -82,5 +82,5 @@ echo $template->render(['red']);
 #### Other rendering implementations
 
 Many other rendering implementations can be created using the RenderTemplateInterface.
-This can allow for using engines like twig to render templates using the same sources or
+This can allow for using engines like Twig to render templates using the same sources or
 even setting variables in other classes to a rendered template.

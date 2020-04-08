@@ -12,7 +12,7 @@ namespace Aesonus\Messages\Contracts;
  * Renders the message from the given source
  * @author Narya
  */
-interface RenderMessageInterface
+interface RenderTemplateInterface
 {
     /**
      * Renders the message from source

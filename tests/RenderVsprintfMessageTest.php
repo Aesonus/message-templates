@@ -13,7 +13,7 @@ namespace Aesonus\Tests;
 
 use Aesonus\Messages\Contracts\TemplateExceptionSourceInterface;
 use Aesonus\Messages\Contracts\TemplateSourceInterface;
-use Aesonus\Messages\RenderVsprintfMessage;
+use Aesonus\Messages\RenderVsprintfTemplate;
 use Aesonus\TestLib\BaseTestCase;
 use Exception;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -31,7 +31,7 @@ class RenderVsprintfMessageTest extends BaseTestCase
 
     protected function setUp() : void
     {
-        $this->testObj = new RenderVsprintfMessage();
+        $this->testObj = new RenderVsprintfTemplate();
     }
     
     /**
